@@ -1,0 +1,13 @@
+[Unit]
+Description=Telegram bot telegram_bot
+After=syslog.target
+After=network.target
+
+[Service]
+WorkingDirectory=/media/telegram_bot/
+ExecStart=/media/telegram_bot/venv/bin/python3 /media/telegram_bot/start_bot.py  # or other path
+RestartSec=5
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
